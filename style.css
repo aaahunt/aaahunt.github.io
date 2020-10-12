@@ -1,0 +1,149 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@100;300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* CSS Starts here */
+
+html{
+	font-family: 'Commissioner', sans-serif;
+	font-weight: 300;
+	font-size: 19px;
+}
+.top.panel h1, .top.panel h2{
+	margin: 1em 0;
+}
+h1{
+	font-family: 'Playfair Display', serif;
+	font-size: 2em;
+}
+h2{
+	font-size: 80%;
+	letter-spacing: 6px;
+	text-transform: uppercase;
+	font-weight: 100;
+	line-height: 1.25em;
+}
+p{	margin: 1em 0;}
+a{	color:#fff;}
+article {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	flex-wrap: wrap;
+	height: 100vh;
+	width: 100vw;
+	
+}
+section {
+    width: 65vw;
+}
+.panel {
+	position: relative;
+    text-align: center;
+}
+.panel.top, .panel.projects{
+	font-weight: 300;
+	background: linear-gradient(135deg, #27356D, #3EA0BE);
+    background-size: 400% 400%;
+	color: #fff;
+
+    -webkit-animation: GradFade 24s ease infinite;
+    -moz-animation: GradFade 24s ease infinite;
+    animation: GradFade 24s ease infinite;
+}
+.panel.about, .panel.contact{
+	background: rgb(14 14 14);
+	background: linear-gradient(135deg, rgb(14 14 14) 0%, rgb(21 19 21) 100%);
+	color: #7f7b5f;
+}
+
+button{
+	position: absolute;
+	top:100vh;
+    transform:translateY(-160%);
+}
+button, button:focus, button:active, button:hover{
+	cursor: pointer;
+	border: 0;
+	background: 0;
+	outline: 0;
+}
+.links a {
+    display: inline-block;
+    padding: 0.6em;
+    border-radius: 100%;
+    background: #ffffff17;
+}
+
+.portrait {
+    border-radius: 100%;
+    width: 50vw;
+	max-width: 400px;
+	margin: 1em auto;
+}
+
+
+@-webkit-keyframes GradFade {
+    0%{background-position:0% 10%}
+    50%{background-position:100% 91%}
+    100%{background-position:0% 10%}
+}
+@-moz-keyframes GradFade {
+    0%{background-position:0% 10%}
+    50%{background-position:100% 91%}
+    100%{background-position:0% 10%}
+}
+@keyframes GradFade {
+    0%{background-position:0% 10%}
+    50%{background-position:100% 91%}
+    100%{background-position:0% 10%}
+}
