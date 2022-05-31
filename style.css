@@ -1,11 +1,7 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@100;300;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -23,7 +19,9 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
+	font-weight: normal;
 	font: inherit;
+	font-family: 'Noto Sans', sans-serif;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -52,8 +50,26 @@ table {
 
 /* CSS Starts here */
 
+@font-face {
+	font-family: 'Noto Sans';
+	src:  url('fonts/noto.woff2') format('woff2');
+	src:  url('fonts/noto.woff') format('woff');
+}
+@font-face {
+	font-family: 'Noto Sans';
+	src:  url('fonts/noto-bold.woff2') format('woff2');
+	src:  url('fonts/noto-bold.woff') format('woff');
+	font-weight: bold;
+}
+@font-face {
+	font-family: 'Noto Sans';
+	src:  url('fonts/noto-thin.woff2') format('woff2');
+	src:  url('fonts/noto-thin.woff') format('woff');
+	font-weight: 300;
+}
+
 html{
-	font-family: 'Commissioner', sans-serif;
+	font-family: 'Noto Sans', sans-serif;
 	font-weight: 300;
 	font-size: 19px;
 }
@@ -61,7 +77,6 @@ html{
 	margin: 1em 0;
 }
 h1{
-	font-family: 'Playfair Display', serif;
 	font-size: 2em;
 }
 h2{
