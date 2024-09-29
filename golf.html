@@ -29,11 +29,26 @@
     input[type="datetime-local"],
     input[type="time"],
     input[type="number"],
+    input[type="checkbox"],
     select {
       padding: 8px;
       border: 1px solid #ccc;
       border-radius: 4px;
       font-size: 1rem;
+    }
+
+    section.checkbox-group {
+      display: flex;
+      gap: 15px; /* Space between the checkboxes */
+      align-items: center; /* Align checkboxes and labels vertically */
+      flex-direction: row;
+    }
+
+    section.checkbox-group label {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0; /* Remove bottom margin from labels to align properly */
+      font-weight: normal;
     }
 
     input[type="submit"] {
@@ -65,7 +80,7 @@
         margin-bottom: 20px;
       }
 
-      section:nth-child(5) {
+      section:last-child {
         flex: 1 1 100%; /* Make submit button take full width */
         display: flex;
         justify-content: flex-end; /* Aligns the button to the right */
@@ -86,46 +101,66 @@
         <input type="time" id="time" name="time" required />
       </section>
       <section>
-        <label for="players">Number of Players:</label>
-        <input type="number" id="players" name="players" value="4" required />
-      </section>
-      <section>
         <label for="course">Course:</label>
-        <select id="course" name="course" required>
+        <select id="course" name="course">
           <option value="1">Hotchkin</option>
           <option value="2">Bracken</option>
         </select>
       </section>
       <section>
         <label for="schedule">Schedule:</label>
-        <input type="datetime-local" id="schedule" name="schedule" required />
+        <input
+          type="time"
+          id="schedule"
+          name="schedule"
+          value="18:30"
+          required
+        />
+      </section>
+      <section class="checkbox-group">
+        <label for="first-partner">
+          <input
+            type="checkbox"
+            id="first-partner"
+            name="partner"
+            value="10072"
+          />
+          Anthony Clarke
+        </label>
+
+        <label for="second-partner">
+          <input
+            type="checkbox"
+            id="second-partner"
+            name="partner"
+            value="10073"
+          />
+          Brian Clarke
+        </label>
+
+        <label for="third-partner">
+          <input
+            type="checkbox"
+            id="third-partner"
+            name="partner"
+            value="10377"
+          />
+          Pete Gray
+        </label>
+
+        <label for="fourth-partner">
+          <input
+            type="checkbox"
+            id="fourth-partner"
+            name="partner"
+            value="9922"
+          />
+          Rob Belton
+        </label>
       </section>
       <section>
         <input type="submit" value="Schedule Booking" />
       </section>
     </form>
-    <script>
-      window.onload = function () {
-        const datetimeField = document.getElementById("schedule");
-        const now = new Date();
-
-        // Set hours and minutes to 18:30
-        now.setHours(18);
-        now.setMinutes(30);
-        now.setSeconds(0);
-        now.setMilliseconds(0);
-
-        // Format to 'YYYY-MM-DDTHH:MM' in local timezone
-        const year = now.getFullYear();
-        const month = String(now.getMonth() + 1).padStart(2, "0"); // Months are 0-indexed
-        const day = String(now.getDate()).padStart(2, "0");
-        const hours = String(now.getHours()).padStart(2, "0");
-        const minutes = String(now.getMinutes()).padStart(2, "0");
-
-        const formattedDateTime = `${year}-${month}-${day}T${hours}:${minutes}`;
-
-        datetimeField.value = formattedDateTime;
-      };
-    </script>
   </body>
 </html>
