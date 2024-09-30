@@ -5,13 +5,11 @@
     <link rel="stylesheet" href="style.css" type="text/css" />
   </head>
   <style>
+    body {
+      font-size: 20px;
+    }
     form {
-      max-width: 600px; /* Sets a maximum width for the form */
-      margin: 0 auto; /* Centers the form horizontally */
       padding: 20px;
-      border: 1px solid #ccc; /* Adds a border to the form */
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     section {
@@ -22,6 +20,7 @@
     }
 
     label {
+      font-size: 1.3em;
       margin-bottom: 5px;
       font-weight: bold;
     }
@@ -32,10 +31,11 @@
     input[type="number"],
     input[type="checkbox"],
     select {
-      padding: 8px;
       border: 1px solid #ccc;
       border-radius: 4px;
       font-size: 1rem;
+      font-size: 1.3em; /* Make input text larger */
+      padding: 18px; /* Increase padding for easier touch */
     }
     input[type="checkbox"] {
       width: 20px;
@@ -56,11 +56,10 @@
       align-items: center;
       margin-bottom: 0; /* Remove bottom margin from labels to align properly */
       font-weight: normal;
+      padding: 10px;
     }
 
     input[type="submit"] {
-      padding: 10px;
-      font-size: 1.1rem;
       font-weight: bold;
       color: #fff;
       background-color: #007bff; /* Blue button color */
@@ -68,54 +67,12 @@
       border-radius: 4px;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      font-size: 1.4em; /* Make button text larger */
+      padding: 18px; /* Increase padding */
     }
 
     input[type="submit"]:hover {
       background-color: #0056b3; /* Darker blue on hover */
-    }
-
-    /* Media Query for larger screens */
-    @media (min-width: 960px) {
-      form {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
-      }
-
-      section {
-        flex: 1 1 48%; /* Takes about half the width of the form */
-        margin-bottom: 20px;
-      }
-
-      section:last-child {
-        flex: 1 1 100%; /* Make submit button take full width */
-        display: flex;
-        justify-content: flex-end; /* Aligns the button to the right */
-      }
-    }
-
-    @media (max-width: 960px) {
-      /* Further increase font size on small screens */
-      body {
-        font-size: 18px; /* Larger base font size */
-      }
-
-      label {
-        font-size: 1.3em; /* Make labels even larger */
-      }
-
-      input[type="text"],
-      input[type="email"],
-      input[type="date"],
-      select {
-        font-size: 1.3em; /* Make input text larger */
-        padding: 18px; /* Increase padding for easier touch */
-      }
-
-      input[type="submit"] {
-        font-size: 1.4em; /* Make button text larger */
-        padding: 18px; /* Increase padding */
-      }
     }
   </style>
 
