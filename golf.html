@@ -109,13 +109,7 @@
       </section>
       <section>
         <label for="schedule">Schedule:</label>
-        <input
-          type="time"
-          id="schedule"
-          name="schedule"
-          value="18:30"
-          required
-        />
+        <input type="datetime-local" id="schedule" name="schedule" required />
       </section>
       <section class="checkbox-group">
         <label for="first-partner">
@@ -162,5 +156,24 @@
         <input type="submit" value="Schedule Booking" />
       </section>
     </form>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const input = document.getElementById("schedule");
+
+        // Create a new Date object for today at 18:30 in local time
+        const today = new Date();
+        today.setHours(18, 30, 0, 0);
+
+        // Format the date and time in the local "YYYY-MM-DDTHH:MM" format
+        const localDatetime = today.toISOString().slice(0, 16);
+        const offsetCorrection = today.getTimezoneOffset() * 60000;
+        const localDateTimeISO = new Date(today - offsetCorrection)
+          .toISOString()
+          .slice(0, 16);
+
+        // Set the value of the input to the local date and time
+        input.value = localDateTimeISO;
+      });
+    </script>
   </body>
 </html>
