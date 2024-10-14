@@ -125,7 +125,7 @@
             type="checkbox"
             id="third-partner"
             name="partner"
-            value="10377"
+            value="10337"
           />
           Pete Gray
         </label>
@@ -146,22 +146,22 @@
     </form>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const input = document.getElementById("schedule");
+        const input = document.getElementById("schedule")
 
         // Create a new Date object for today at 18:30 in local time
-        const today = new Date();
-        today.setHours(18, 30, 0, 0);
+        const today = new Date()
+        today.setHours(18, 30, 0, 0)
 
         // Format the date and time in the local "YYYY-MM-DDTHH:MM" format
-        const localDatetime = today.toISOString().slice(0, 16);
-        const offsetCorrection = today.getTimezoneOffset() * 60000;
+        const localDatetime = today.toISOString().slice(0, 16)
+        const offsetCorrection = today.getTimezoneOffset() * 60000
         const localDateTimeISO = new Date(today - offsetCorrection)
           .toISOString()
-          .slice(0, 16);
+          .slice(0, 16)
 
         // Set the value of the input to the local date and time
-        input.value = localDateTimeISO;
-      });
+        input.value = localDateTimeISO
+      })
     </script>
   </body>
 </html>
