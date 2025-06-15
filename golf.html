@@ -77,9 +77,13 @@
   </style>
 
   <body>
-    <form
-      action="https://fpod5wkzaj2hde2r4awva2uw4u0oonrr.lambda-url.eu-north-1.on.aws"
-    >
+    <form action="https://fpod5wkzaj2hde2r4awva2uw4u0oonrr.lambda-url.eu-north-1.on.aws">
+      <section>
+        <label for="booker">Booker:</label>
+        <select id="booker" name="booker">
+          <option value="127">Robert Heathote</option>
+        </select>
+      </section>
       <section>
         <label for="date">Booking Date:</label>
         <input type="date" id="date" name="date" required />
@@ -101,85 +105,44 @@
       </section>
       <section class="checkbox-group">
         <label for="first-partner">
-          <input
-            type="checkbox"
-            id="first-partner"
-            name="partner"
-            value="10072"
-          />
+          <input type="checkbox" id="first-partner" name="partner" value="10072" />
           Anthony Clarke
         </label>
 
         <label for="second-partner">
-          <input
-            type="checkbox"
-            id="second-partner"
-            name="partner"
-            value="10073"
-          />
+          <input type="checkbox" id="second-partner" name="partner" value="10073" />
           Brian Clarke
         </label>
 
         <label for="third-partner">
-          <input
-            type="checkbox"
-            id="third-partner"
-            name="partner"
-            value="10337"
-          />
+          <input type="checkbox" id="third-partner" name="partner" value="10337" />
           Pete Gray
         </label>
 
         <label for="fourth-partner">
-          <input
-            type="checkbox"
-            id="fourth-partner"
-            name="partner"
-            value="9922"
-          />
+          <input type="checkbox" id="fourth-partner" name="partner" value="9922" />
           Rob Belton
         </label>
 
         <label for="fifth-partner">
-          <input
-            type="checkbox"
-            id="fifth-partner"
-            name="partner"
-            value="59116"
-          />
+          <input type="checkbox" id="fifth-partner" name="partner" value="59116" />
           Dave Smith
         </label>
 
         <label for="sixth-partner">
-          <input
-            type="checkbox"
-            id="sixth-partner"
-            name="partner"
-            value="10098"
-          />
+          <input type="checkbox" id="sixth-partner" name="partner" value="10098" />
           Martin Cook
         </label>
 
         <label for="seventh-partner">
-          <input
-            type="checkbox"
-            id="seventh-partner"
-            name="partner"
-            value="10585"
-          />
-        Neil Lancaster
+          <input type="checkbox" id="seventh-partner" name="partner" value="10585" />
+          Neil Lancaster
         </label>
 
         <label for="eighth-partner">
-          <input
-            type="checkbox"
-            id="eighth-partner"
-            name="partner"
-            value="10572"
-          />
+          <input type="checkbox" id="eighth-partner" name="partner" value="10572" />
           Richard Kisby
         </label>
-        
       </section>
       <section>
         <input type="submit" value="Schedule Booking" />
@@ -196,9 +159,7 @@
         // Format the date and time in the local "YYYY-MM-DDTHH:MM" format
         const localDatetime = today.toISOString().slice(0, 16)
         const offsetCorrection = today.getTimezoneOffset() * 60000
-        const localDateTimeISO = new Date(today - offsetCorrection)
-          .toISOString()
-          .slice(0, 16)
+        const localDateTimeISO = new Date(today - offsetCorrection).toISOString().slice(0, 16)
 
         // Set the value of the input to the local date and time
         input.value = localDateTimeISO
